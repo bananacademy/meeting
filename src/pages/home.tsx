@@ -95,6 +95,8 @@ function HomePage() {
     var description = url.searchParams.get("description");
     var from = url.searchParams.get("from");
     var to = url.searchParams.get("to");
+    var status = url.searchParams.get("status");
+
 
 
 
@@ -108,6 +110,7 @@ function HomePage() {
       'description': description,
       'from': from,
       'to': to,
+      'status': status,
     }
     axios.post(`${process.env.REACT_APP_END_POINT}creat_class_room`, data).then((res)=>{
         session.roomName = res.data.roomName;
